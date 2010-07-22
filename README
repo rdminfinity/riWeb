@@ -1,0 +1,59 @@
+riWeb was created and written by RDM Infinity, LLC 2010
+
+The riWeb module for RingoJS.
+=================================================
+
+This module provides access to your Multivalue Database application through
+a standard HTTP formated call. This allow you to retrieve data and process
+business logic that is already built into your system, and out put the results
+in any manner of format.
+ 
+This module requires the RingoJS package. This package is avalible from 
+ringojs.org. 
+
+ 
+Currently supported Multivalue Databases:
+==================================================
+  D3 by TigerLogic
+  Universe by Rocket Software
+  OpenQM by Ladybridge Systems
+
+
+License
+=================================================
+
+  This software is released under the Apache License. It is avalable free
+of charge and as is without any warranty.
+
+
+Usage
+=================================================
+
+  The software is pretty simple to use. First download the source code from
+http://www.rdminfinity.com/multivalue. You will also need to download and 
+install RingoJS from http://www.ringojs.org. (This is really easy. The folks
+at ringojs are amazing). The whole thing requires Java to run so make sure
+that is avalible.
+
+ Once RingoJS is installed copy the "rdm" folder into the ringo modules
+folder. The main application is the riWeb folder. This can e placed 
+anywhere you would like.
+
+To launch the web server you issue the command:
+
+  ringo PATH_TO_riWeb/main.js
+
+This will launch an instance of the jetty webserver that is built into 
+ringojs.
+
+From here if you wish to pass data to your Multivalue application you 
+must copy the 3 programs in the MVCode folder into your Multivalue database.
+
+1. RDM.GET.DATA
+2. RDM.SEND.DATA
+3. SWAP (If you already have a subroutine called swap you may need to rename this).
+
+  
+
+
+
