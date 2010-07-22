@@ -4,9 +4,9 @@ var sp = require("rdm/subprocess");
 
 var command;
 var setup = new Object();
-setup.binary = "/usr/local/bin/qm";
-setup.type = "QM";
-setup.workingDirectory = "/tmp";
+setup.binary = "PATH_TO_BINARY_HERE";
+setup.type = "DATABASE_TYPE"; //Types: D3, QM, UV
+setup.workingDirectory = ""; //Path to working directory. UV is path to account
 setup.dbvm = "";
 
 
