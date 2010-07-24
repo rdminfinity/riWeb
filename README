@@ -5,7 +5,7 @@ The riWeb module for RingoJS.
 
 This module provides access to your Multivalue Database application through
 a standard HTTP formatted call. This allow you to retrieve data and process
-business logic that is already built into your system, and out put the results
+business logic that is already built into your system, and output the results
 in any manner of format.
 
 This module requires the RingoJS package. This package is available from
@@ -29,21 +29,20 @@ of charge and as is without any warranty.
 Usage
 =================================================
 
-  The software is pretty simple to use. First download the source code from
-http://www.rdminfinity.com/multivalue. You will also need to download and
-install RingoJS from http://www.ringojs.org. (This is really easy. The folks
-at ringojs are amazing). The whole thing requires Java to run so make sure
-that is available.
+ To get started you will need to first download and install RingoJS from 
+http://www.ringojs.org. (This is really easy. The folks at ringojs are amazing). 
+The whole thing will require Java to run so make sure that is available.
 
- Once RingoJS is installed copy the "rdm" folder into the ringo modules
-folder. The main application is the riWeb folder. This can e placed
-anywhere you would like.
+ Once RingoJS is installed download all of the source code and copy the "rdm"
+folder into the ringo modules directory. The main application is the riWeb 
+folder and that can be placed anywhere you would like.
 
-To launch the web server you issue the command:
+To launch the web server, issue the command:
 
-  ringo PATH_TO_riWeb/main.js
+  ringo PATH_TO_/riWeb/main.js  
+(replace PATH_TO_ with the path that the riWeb folder was place in)
 
-This will launch an instance of the jetty web server that is built into
+This will launch an instance of the jetty web server that is already built into
 ringojs.
 
 From here if you wish to pass data to your Multivalue application you
