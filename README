@@ -50,7 +50,9 @@ must copy the 3 programs in the MVCode folder into your Multivalue database.
 
 1. RDM.GET.DATA
 2. RDM.SEND.DATA
-3. SWAP (If you already have a subroutine called swap you may need to rename this).
+3. SWAP (Install this for Universe)
+4. RDM.GET.DATA.UV (This is only for Universe)
+
 
 Example
 ===========================================================
