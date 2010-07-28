@@ -61,6 +61,8 @@ Example
 issue requests to your database in the form of a standard http url:
 
    http://servername:PORT_NUMBER/account/program/format?vars=vals
+
+NOTE: Default port number is 8080
  
 To access the varibales in your multivalue database call RDM.GET.DATA(VAR,"")
 
