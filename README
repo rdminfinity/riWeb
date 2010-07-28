@@ -65,4 +65,12 @@ To access the varibales in your multivalue database call RDM.GET.DATA(VAR,"")
 This will return a multivalue variable with the variable names in attibute<1> 
 of the VAR variable. In attribute<2> will be the values of the string.
  
+NOTE: In order to pass in the variable data to your PickBasic program the MD
+or VOC record must be modified after compiling the program to match the 
+following:
+
+    VOC / MD record:
+    <1> PQ
+    <2> HRUN file_name program_name
+    <3> P
 
