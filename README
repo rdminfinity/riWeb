@@ -37,6 +37,9 @@ The whole thing will require Java to run so make sure that is available.
 folder into the ringo modules directory. The main application is the riWeb 
 folder and that can be placed anywhere you would like.
 
+You will also need to set the db binary path, db type, and db account path (if
+needed for UV) in rdm/mv.js to the correct values for your system,
+
 To launch the web server, issue the command:
 
   ringo PATH_TO_/riWeb/main.js  
@@ -60,7 +63,7 @@ Example
    Once you have both the multivalue and server components installed you can
 issue requests to your database in the form of a standard http url:
 
-   http://servername:PORT_NUMBER/account/program/format?vars=vals
+   http://servername:PORT_NUMBER/mv/account/program/format?vars=vals
 
 NOTE: Default port number is 8080
  
