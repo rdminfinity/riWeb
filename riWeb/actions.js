@@ -12,7 +12,6 @@ function mv(req,acct,prog,format)
    db.dbSetup(acct,"",prog,req.queryString);
    var resp = db.runCommand();
    var response = new Response(resp);
-   response.debug(); 
    if(format !== undefined)
    { 
         switch(format.toLowerCase())
