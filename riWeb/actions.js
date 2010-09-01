@@ -9,10 +9,9 @@ function index(req) {
 function mv(req,acct,prog,format)
 {
    var db = require('rdm/mv');
-   db.dbSetup(acct,"",prog,req.queryString);
+   db.dbSetup(acct,"",prog,req.params);
    var resp = db.runCommand();
    var response = new Response(resp);
-   response.debug(); 
    if(format !== undefined)
    { 
         switch(format.toLowerCase())

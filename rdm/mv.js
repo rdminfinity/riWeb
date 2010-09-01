@@ -4,9 +4,9 @@ var sp = require("rdm/subprocess");
 
 var command;
 var setup = new Object();
-setup.binary = "PATH_TO_BINARY_HERE";
-setup.type = "DATABASE_TYPE"; //Types: D3, QM, UV
-setup.workingDirectory = ""; //Path to working directory. UV is path to account
+setup.binary = "/usr/local/bin/qm";
+setup.type = "QM";
+setup.workingDirectory = "/tmp";
 setup.dbvm = "";
 
 
@@ -18,10 +18,23 @@ String.prototype.trim = function(){
 
 function dbSetup(user, pass, prog, data)
 {
+  var  params = "";
+  var itemCnt = 0;
+
   setup.user = user;
   setup.password = pass;
   setup.program = prog;
-  setup.data = data;
+ 
+  for(var key in data)
+  {
+    if(itemCnt > 0)
+    {
+      params += "&"
+    }
+    params += key+"="+escape(data[key]);
+    itemCnt++;
+  }
+  setup.data = params;
 }
 
 

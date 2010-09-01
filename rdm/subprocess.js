@@ -82,7 +82,8 @@ exports.command = function() {
     connect(process, output, error);
     var status = process.waitFor();
     if (status != 11 && status != 0) {
-        throw new Error("(" + status + ") " + error.content);
+      print("Status: "+status); 
+      throw new Error("(" + status + ") " + error.content);
     }
     
     return output.content;
