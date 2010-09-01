@@ -4,10 +4,10 @@ var sp = require("rdm/subprocess");
 
 var command;
 var setup = new Object();
-setup.binary = "/usr/local/bin/qm";
-setup.type = "QM";
-setup.workingDirectory = "/tmp";
-setup.dbvm = "";
+setup.binary = ""; //set this to the path for the DB binary
+setup.type = ""; //set this to QM, UV, D3
+setup.workingDirectory = ""; //UV - set this to the UV account path
+setup.dbvm = ""; //D3 set this to the VM name you want to use
 
 
 String.prototype.trim = function(){
