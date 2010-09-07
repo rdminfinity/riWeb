@@ -1,0 +1,50 @@
+#!/bin/bash
+#
+#Written By: Brandon Robinson, RDM Infinity, LLC  09/07/10
+#Linux service to start the web server automatically
+#
+
+#source function
+. /etc/rc.d/init.d/functions
+
+
+pidfile="/var/run/riWeb.pid"
+
+
+start(){
+   echo -n  $"Starting RDM Infinity Multivalue Web Server"
+   /root/ringojs/bin/ringo /root/riWeb/riWeb/main.js& > /dev/null 2>&1
+   PID=$!
+   touch $pidfile
+   echo $PID > "$pidfile"
+   RETVAL=$?
+   echo
+   [ $RETVAL = 0 ] 
+}
+
+stop(){
+  echo -n $"Stopping RDM Infinity Multivalue Web Server"
+  killproc -p "$pidfile"
+  RETVAL=$?
+  echo
+  [ $RETVAL = 0 ] && rm -f "$pidfile"
+}
+
+case "$1" in 
+  start)
+  	start
+  	;;
+  stop)
+	stop
+	;;
+  status)
+     status -p "$pidfile"
+     RETVAL=$?
+     ;;
+  *)
+	echo $"Usage: riWeb {start|stop|status}"
+        exit 1
+
+esac
+
+exit 0
