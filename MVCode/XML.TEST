@@ -1,0 +1,11 @@
+*PROGRAM
+CALL RDM.GET.DATA(VAR,"")
+LOCATE "user" IN VAR<1> SETTING POS THEN
+  USER = VAR<2,POS>
+END
+XML = "<xml>"
+XML<-1> = "<user>":user:"</user>"
+XML<-1> = "</xml>"
+CALL RDM.SEND.DATA(XML,"")
+STOP
+
