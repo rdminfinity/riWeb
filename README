@@ -65,8 +65,14 @@ issue requests to your database in the form of a standard http url:
 
    http://servername:PORT_NUMBER/mv/account/program/format?vars=vals
 
-NOTE: Default port number is 8080
- 
+NOTE: 1. Default port number is 8080      
+      2. The account is the account to log into to run the program      
+      3. The program is the program to run      
+      4. Format is currently defaulted to HTML (Options: xml | json)      
+      5. vars & vals are the variables and the values to pass to the Multivalue
+         program. They are encoded as an HTML get string:             
+            var1=test&user=rdm&data=100
+
 To access the varibales in your multivalue database call RDM.GET.DATA(VAR,"")
 
 This will return a multivalue variable with the variable names in attibute<1> 
