@@ -1,6 +1,6 @@
 riWeb was created and written by RDM Infinity, LLC 2010
 
-The riWeb module for RingoJS.
+The riWeb module for RingoJS 0.5.
 =================================================
 
 This module provides access to your Multivalue Database application through
@@ -8,7 +8,7 @@ a standard HTTP formatted call. This allow you to retrieve data and process
 business logic that is already built into your system, and output the results
 in any manner of format.
 
-This module requires the RingoJS package. This package is available from
+This module requires the RingoJS 0.5 package. This package is available from
 ringojs.org.
 
 
@@ -31,7 +31,8 @@ Usage
 
  To get started you will need to first download and install RingoJS from 
 http://www.ringojs.org. (This is really easy. The folks at ringojs are amazing). 
-The whole thing will require Java to run so make sure that is available.
+The whole thing will require Java to run so make sure that is available. Currently
+the project is only tested up through RingoJS 0.5.
 
  Once RingoJS is installed download all of the source code and copy the "rdm"
 folder into the ringo modules directory. The main application is the riWeb 
