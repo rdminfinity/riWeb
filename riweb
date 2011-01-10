@@ -1,4 +1,7 @@
 #!/bin/bash
+#chkconfig: 2345 95 20
+#description: Manage the RDM Infinity Multivalue Web Server
+#processname: riWeb
 #
 #Written By: Brandon Robinson, RDM Infinity, LLC  09/07/10
 #Linux service to start the web server automatically
@@ -7,17 +10,16 @@
 #source function
 . /etc/rc.d/init.d/functions
 
-
 pidfile="/var/run/riWeb.pid"
 
 
 start(){
    echo -n  $"Starting RDM Infinity Multivalue Web Server"
-   /root/ringojs/bin/ringo /root/riWeb/riWeb/main.js& > /dev/null 2>&1
+   /rdm/ringojs/bin/ringo /rdm/ringojs/apps/riWeb/main.js > /dev/null &
+   RETVAL=$?
    PID=$!
    touch $pidfile
    echo $PID > "$pidfile"
-   RETVAL=$?
    echo
    [ $RETVAL = 0 ] 
 }
@@ -33,18 +35,23 @@ stop(){
 case "$1" in 
   start)
   	start
-  	;;
+ 	;;
   stop)
 	stop
 	;;
+  restart)
+        stop
+        start
+        ;;
   status)
+     echo -n $"Status of RDM Infinity Multivalue Web Server: "
      status -p "$pidfile"
      RETVAL=$?
      ;;
   *)
-	echo $"Usage: riWeb {start|stop|status}"
+	echo $"Usage: riWeb {start|stop|status|restart}"
         exit 1
 
 esac
 
-exit 0
+exit $RETVAL

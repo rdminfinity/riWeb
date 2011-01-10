@@ -10,9 +10,8 @@ include('io');
 
 var File = java.io.File;
 
-
 String.prototype.trim = function(){
-	return this.replace(/^\s+|\s+$/,'');
+    return this.replace(/^\s+|\s+$/,'');
 }
 
 function createProcess(args) {
@@ -35,21 +34,23 @@ function connect(process, output, errput) {
      //  new TextStream(new Stream(process.inputStream)).copy(output);
       var ts = new TextStream(new Stream(process.inputStream));
       var doOutput = false;
-
       while(true)
       {
-           var line = ts.readLine();
-	    if(!line.length)
-	         break;
-          if(line.substring(0,7) == "~~END~~")
+          
+          var line = ts.readLine();
+	  if(!line.length)
+          {
+            break;
+          }
+          if(line.indexOf("~~END~~") >= 0)
           {
               doOutput = false;
           } 
           if(doOutput)
           { 
-           output.write(line).flush();
+             output.write(line.trim().substring(1)).flush();
           }
-          if(line.substring(0,9) == "~~START~~")
+          if(line.indexOf("~~START~~") >= 0)
           {
              doOutput = true;
           }

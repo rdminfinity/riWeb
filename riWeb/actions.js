@@ -17,14 +17,17 @@ function mv(req,acct,prog,format)
         switch(format.toLowerCase())
    	{
            case "xml":
-             response.contentType = 'application/xml';
+             //response.contentType = 'application/xml';
+             response = new xmlResponse(resp);
              break;
      	   case "json":
-             response.contentType = 'application/json';
+             //response.contentType = 'application/json';
+	     var obj = eval('('+ resp +')');
+             response = new jsonResponse(obj);
              break;
   	 }
    }
-   
+   //print("dbObj.isError: "+db.dbObj.isError.toString()); 
    return response;
 
 
