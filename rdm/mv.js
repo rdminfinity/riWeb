@@ -1,3 +1,4 @@
+//*Written by Brandon Robinson
 export('runCommand','dbSetup','setup','dbObj');
 
 var sp = require("rdm/subprocess");

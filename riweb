@@ -3,7 +3,7 @@
 #description: Manage the RDM Infinity Multivalue Web Server
 #processname: riWeb
 #
-#Written By: Brandon Robinson, RDM Infinity, LLC  09/07/10
+#Written By: Brandon Robinson, RDM Infinity, LLC  01/10/10
 #Linux service to start the web server automatically
 #
 
